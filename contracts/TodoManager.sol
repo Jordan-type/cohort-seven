@@ -48,4 +48,10 @@ contract TodoManger is TodoRoles {
         return (todo.title, todo.completed, todo.deadline, todo.category, todo.assignedTo);
     }
 
+    // function delete Todo
+    // part of assignment one
+    function deleteTodo() public view returns () {
+        // add logic here 
+    } 
+
 }
