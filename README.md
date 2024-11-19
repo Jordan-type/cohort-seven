@@ -14,4 +14,5 @@ npx hardhat run scripts/deploy.js --network sepolia || ethereum
 npx hardhat verify --network sepolia 0xcD41B4B0D885b544E5d46E6E9a73f048f9758267 || 0x95057745c2B5f47ec7eAcdAAAAE1E0E8D7bFD56B
 ```
 
-
+## Assignment 1
+- Create a new contract called `Lock` that has a single function `lock()` that locks the contract
