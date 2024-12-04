@@ -16,3 +16,4 @@ npx hardhat verify --network sepolia 0xcD41B4B0D885b544E5d46E6E9a73f048f9758267 
 
 ## Assignment 1
 - Create a new contract called `Lock` that has a single function `lock()` that locks the contract
+
