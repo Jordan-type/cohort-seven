@@ -21,7 +21,7 @@ contract Jokes {
 
     mapping(uint256 => Joke) public jokes;
     mapping(address => uint256) public creatorBalances;
-    mapping(address => uint256) public rewardAmounts;
+    mapping(uint256 => uint256) public rewardAmounts;
 
     uint256 public constant CLASSIC_REWARD = 0.001 ether;
     uint256 public constant FUNNY_REWARD = 0.005 ether; // DEFINE IDs ON THE constructor
@@ -38,7 +38,7 @@ contract Jokes {
     event BalanceWithdrawn(address indexed creatorAddress, uint256 amount);
     event JokeDeleted(uint256 indexed jokeId);
 
-    constructor () {
+    function initializeRewards() public {
         rewardAmounts[1] = CLASSIC_REWARD;
         rewardAmounts[2] = FUNNY_REWARD;
     }
@@ -102,7 +102,7 @@ contract Jokes {
         emit BalanceWithdrawn(msg.sender, balance);
     }
 
-    function deleteJoke(uint256 _jokeId) {
+    function deleteJoke(uint256 _jokeId)  public {
         require(_jokeId < numberOfJokes, "Invalid Joke ID OR Index!") ;
         require(jokes[_jokeId].creatorAddress == msg.sender, "Only the joke creator can delete the joke!"); //
         require(!jokes[_jokeId].isDeleted, "Joke Already Removed!"); 
